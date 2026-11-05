@@ -10,29 +10,37 @@ low_prio_disk_penalty = 0
 high_prio_disk_penalty = 5
 
 
+def set_penalty_lambda(lambda_val: float):
+    """Set the QoS penalty lambda ratio (ratio of LP penalty to HP penalty)."""
+    global mid_low_prio_penalty, max_low_prio_penalty
+    mid_low_prio_penalty = mid_high_prio_penalty * float(lambda_val)
+    max_low_prio_penalty = max_high_prio_penalty * float(lambda_val)
+
+
 def get_alpha():
-    alpha = max_low_prio_penalty / max_high_prio_penalty
-    # alpha = 0.5
+    alpha = max_low_prio_penalty / max_high_prio_penalty if max_high_prio_penalty > 0 else 0.2
     return alpha
 
 
-def get_penalty(response_time, priority) -> int:
+def get_penalty(response_time, priority) -> float:
     if priority == "h":
         if response_time == 0.0:
-            return high_prio_disk_penalty
+            return float(high_prio_disk_penalty)
         if response_time < 0.02:
-            return min_high_prio_penalty
+            return float(min_high_prio_penalty)
         if response_time < 0.15:
-            return mid_high_prio_penalty
+            return float(mid_high_prio_penalty)
         elif response_time >= 0.15:
-            return max_high_prio_penalty
+            return float(max_high_prio_penalty)
 
     elif priority == "l":
         if response_time == 0.0:
-            return low_prio_disk_penalty
+            return float(low_prio_disk_penalty)
         if response_time < 0.02:
-            return min_low_prio_penalty
+            return float(min_low_prio_penalty)
         if response_time < 0.15:
-            return mid_low_prio_penalty
+            return float(mid_low_prio_penalty)
         elif response_time >= 0.15:
-            return max_low_prio_penalty
+            return float(max_low_prio_penalty)
+
+    return 0.0

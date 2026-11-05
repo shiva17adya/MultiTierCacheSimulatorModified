@@ -1,0 +1,15 @@
+{
+    "algorithm": "M-ARC",
+    "workload": "synthetic",
+    "num_requests": 1000,
+    "num_tiers": 2,
+    "cache_proportion": 0.05,
+    "priority_ratio": 0.2,
+    "penalty_lambda": 0.5,
+    "catalog_size": null,
+    "seed": 42,
+    "output_dir": "C:\\Users\\Dell\\Desktop\\DAAp\\MultiTierCacheSimulator\\results\\final_baseline\\raw",
+    "logs_enabled": false,
+    "slot_size": null,
+    "tier_configs": []
+}

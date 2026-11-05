@@ -21,10 +21,50 @@ class AbstractQLQMARCPolicy(Policy):
         self.t1 = self.t1()  # T1: recent cache entries
         self.t2 = self.t2()  # T2: frequent entries
 
-        self.beta_ssd = self.forwarder.get_next_tier(1).max_size / self.forwarder.get_default_tier().max_size
-        self.beta_disk = self.forwarder.get_next_tier(2).max_size / self.forwarder.get_default_tier().max_size
-        # Init the Q-Learning Agent
-        self.q_learning_agent = QLearningAgent(self.c, self.c, 0.1, 0.99, 0.1)
+        # Init the Q-Learning Agent with states covering 0..c inclusive
+        self.q_learning_agent = QLearningAgent(
+            num_states=self.c + 1,
+            num_actions=self.c,
+            learning_rate=0.1,
+            discount_factor=0.99,
+            epsilon=0.1,
+            epsilon_decay_value=0.001,
+            min_epsilon=0.01,
+            include_cache_state=True,
+        )
+
+    def get_physical_tiers(self):
+        """Return all registered physical storage tiers, filtering out the virtual BOSS coordinator tier."""
+        physical = [t for t in self.forwarder.tiers if t.name != "BOSS" and t.max_size > 0]
+        if not physical:
+            physical = [t for t in self.forwarder.tiers if t.max_size > 0]
+        return physical
+
+    def get_tier_betas(self):
+        """Calculate beta_i = size_i / size_1 for each physical tier i (tier 1 is the fastest/top tier)."""
+        physical_tiers = self.get_physical_tiers()
+        if not physical_tiers:
+            return {}, 1.0
+
+        top_tier = physical_tiers[0]
+        top_size = float(top_tier.max_size) if top_tier.max_size > 0 else 1.0
+
+        betas = {}
+        for tier in physical_tiers:
+            betas[tier] = float(tier.max_size) / top_size
+
+        beta_sum = sum(betas.values())
+        return betas, beta_sum
+
+    @property
+    def beta_ssd(self):
+        pt = self.get_physical_tiers()
+        return (pt[1].max_size / pt[0].max_size) if len(pt) > 1 and pt[0].max_size > 0 else 1.0
+
+    @property
+    def beta_disk(self):
+        pt = self.get_physical_tiers()
+        return (pt[2].max_size / pt[0].max_size) if len(pt) > 2 and pt[0].max_size > 0 else self.beta_ssd
 
     def _replace(self, env: Environment, packet: Packet):
         in_b2 = yield env.process(self.forwarder.index.packet_in_ghost(packet.name, 'b2'))
@@ -330,41 +370,25 @@ class AbstractQLQMARCPolicy(Policy):
         yield env.process(self.forwarder.tiers[tier_nb].write_packet_t2(env, res, packet, new_index))
 
     def increment_p(self, len_b1, len_b2):
-        for strategy in self.forwarder.get_default_tier().strategies:
-            try:
-                strategy.p = min(strategy.c, strategy.p + max(len_b2 / len_b1, 1))
-                break
-            except Exception as e:
-                print(e)
-        for strategy in self.forwarder.get_next_tier(1).strategies:
-            try:
-                strategy.p = min(strategy.c, strategy.p + max((len_b2 / len_b1) * self.beta_ssd, self.beta_ssd))
-                break
-            except Exception as e:
-                print(e)
-        for strategy in self.forwarder.get_next_tier(2).strategies:
-            try:
-                strategy.p = min(strategy.c, strategy.p + max((len_b2 / len_b1) * self.beta_disk, self.beta_disk))
-                break
-            except Exception as e:
-                print(e)
+        """Local per-tier size adaptation for QL-QM-ARC (global p is adapted by RL agent)."""
+        betas, _ = self.get_tier_betas()
+        ratio = max(len_b2 / len_b1, 1.0) if len_b1 > 0 else 1.0
+        for tier, beta_i in betas.items():
+            delta_pi = ratio * beta_i
+            for strategy in tier.strategies:
+                try:
+                    strategy.p = min(strategy.c, strategy.p + delta_pi)
+                except Exception as e:
+                    print(e)
 
     def decrement_p(self, len_b1, len_b2):
-        for strategy in self.forwarder.get_default_tier().strategies:
-            try:
-                strategy.p = max(0, strategy.p - max((len_b1 / len_b2), 1))
-                break
-            except Exception as e:
-                print(e)
-        for strategy in self.forwarder.get_next_tier(1).strategies:
-            try:
-                strategy.p = max(0, strategy.p - max((len_b1 / len_b2) * self.beta_ssd, self.beta_ssd))
-                break
-            except Exception as e:
-                print(e)
-        for strategy in self.forwarder.get_next_tier(2).strategies:
-            try:
-                strategy.p = max(0, strategy.p - max((len_b1 / len_b2) * self.beta_disk, self.beta_disk))
-                break
-            except Exception as e:
-                print(e)
+        """Local per-tier size adaptation for QL-QM-ARC (global p is adapted by RL agent)."""
+        betas, _ = self.get_tier_betas()
+        ratio = max(len_b1 / len_b2, 1.0) if len_b2 > 0 else 1.0
+        for tier, beta_i in betas.items():
+            delta_pi = ratio * beta_i
+            for strategy in tier.strategies:
+                try:
+                    strategy.p = max(0.0, strategy.p - delta_pi)
+                except Exception as e:
+                    print(e)

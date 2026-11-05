@@ -135,48 +135,46 @@ class MARCPolicy(Policy):
             return
 
     def send_to_next_level_t1(self, env: Environment, res):
-        try:
-            target_tier_id = self.forwarder.tiers.index(self.tier) + 1
+        name, packet = self.t1.get_without_pop()
+        self.t1.pop()
+        self.tier.number_of_eviction_from_this_tier += 1
+        self.tier.number_of_packets -= 1
+        self.tier.used_size -= packet.size
+        print('send packet %s from t1 %s to next tier' % (packet.name, self.tier.name))
+
+        target_tier_id = self.forwarder.tiers.index(self.tier) + 1
+        if target_tier_id < len(self.forwarder.tiers):
             self.forwarder.tiers[target_tier_id].number_of_eviction_to_this_tier += 1
-
-            name, packet = self.t1.get_without_pop()
-            self.t1.pop()
-            self.tier.number_of_eviction_from_this_tier += 1
-            self.tier.number_of_packets -= 1
-            self.tier.used_size -= packet.size
-            print('send packet %s from t1 dram to t1 disk' % packet.name)
-
-            # Disk is free
             if len(res[target_tier_id].queue) < self.forwarder.tiers[target_tier_id].submission_queue_max_size:
-                print("evict from t1 to disk %s" % packet.name)
+                print('evict from t1 to next tier %s' % packet.name)
                 yield env.process(self.forwarder.tiers[target_tier_id].write_packet_t1(env, res, packet, index=-1,
                                                                                        cause='eviction'))
-            # disk is overloaded --> drop packet
             else:
-                print("drop packet %s" % packet.name)
-        except Exception as e:
-            print("error : %s" % e)
+                print('drop packet %s' % packet.name)
+                yield env.process(self.forwarder.index.del_packet_from_cs(packet.name))
+        else:
+            print('definitively evict %s from last tier %s' % (packet.name, self.tier.name))
+            yield env.process(self.forwarder.index.del_packet_from_cs(packet.name))
 
     def send_to_next_level_t2(self, env: Environment, res):
-        try:
-            target_tier_id = self.forwarder.tiers.index(self.tier) + 1
+        name, packet = self.t2.get_without_pop()
+        self.t2.pop()
+        self.tier.number_of_eviction_from_this_tier += 1
+        self.tier.number_of_packets -= 1
+        self.tier.used_size -= packet.size
+        print('send packet %s from t2 %s to next tier' % (packet.name, self.tier.name))
+
+        target_tier_id = self.forwarder.tiers.index(self.tier) + 1
+        if target_tier_id < len(self.forwarder.tiers):
             self.forwarder.tiers[target_tier_id].number_of_eviction_to_this_tier += 1
-
-            name, packet = self.t2.get_without_pop()
-            self.t2.pop()
-            self.tier.number_of_eviction_from_this_tier += 1
-            self.tier.number_of_packets -= 1
-            self.tier.used_size -= packet.size
-            print('send packet %s from t2 dram to t2 disk' % packet.name)
-
-            # Disk is free
             if len(res[target_tier_id].queue) < self.forwarder.tiers[target_tier_id].submission_queue_max_size:
-                print("evict from t2 to disk %s" % packet.name)
+                print('evict from t2 to next tier %s' % packet.name)
                 yield env.process(
                     self.forwarder.tiers[target_tier_id].write_packet_t2(env, res, packet, index=-1,
                                                                          cause='eviction'))
-            # disk is overloaded --> drop packet
             else:
-                print("drop packet %s" % packet.name)
-        except Exception as e:
-            print("error : %s" % e)
+                print('drop packet %s' % packet.name)
+                yield env.process(self.forwarder.index.del_packet_from_cs(packet.name))
+        else:
+            print('definitively evict %s from last tier %s' % (packet.name, self.tier.name))
+            yield env.process(self.forwarder.index.del_packet_from_cs(packet.name))

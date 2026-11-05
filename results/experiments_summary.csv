@@ -1,0 +1,9 @@
+experiment_id,timestamp,algorithm,workload_name,is_synthetic,num_tiers,total_requests,high_priority_requests,low_priority_requests,total_hits,total_misses,global_hit_ratio,high_priority_hit_ratio,low_priority_hit_ratio,penalty_hp,penalty_lp,total_penalty,avg_retrieval_latency,avg_retrieval_latency_hp,avg_retrieval_latency_lp,wall_time_seconds
+exp_qm_arc_2tier_20261105_010224_84f75bd6,2026-11-05 01:02:24,QM-ARC,synthetic_zipf_alpha1.0_hp0.2,True,2,500,88,412,160,340,0.32,0.363636,0.31068,3055.0,3055.0,6110.0,1.45e-06,1.51e-06,1.43e-06,0.205
+exp_qm_arc_2tier_20261105_010225_3bfd5706,2026-11-05 01:02:25,QM-ARC,synthetic_zipf_alpha1.0_hp0.2,True,2,500,98,402,143,357,0.286,0.326531,0.276119,3550.0,3150.0,6700.0,1.27e-06,1.3e-06,1.26e-06,0.187
+exp_ha_qm_arc_2tier_20261105_014404_ab9e2b1b,2026-11-05 01:44:04,HA-QM-ARC,synthetic_zipf_alpha1.0_hp0.2,True,2,1000,171,829,386,614,0.386,0.356725,0.392039,5890.0,5425.0,11315.0,1.18e-06,9.4e-07,1.23e-06,0.974
+exp_qm_arc_2tier_20261105_015202_1e108e83,2026-11-05 01:52:02,QM-ARC,synth_items10000_reqs1000_seed42,False,2,1000,171,829,347,653,0.347,0.327485,0.351025,6175.0,5830.0,12005.0,1.58e-06,1.39e-06,1.62e-06,0.553
+exp_ha_qm_arc_2tier_20261105_015214_faba0609,2026-11-05 01:52:14,HA-QM-ARC,test_scan,False,2,1200,218,982,747,453,0.6225,0.591743,0.629328,4685.0,3640.0,8325.0,2.29e-06,2.31e-06,2.29e-06,0.842
+exp_qm_arc_2tier_20261105_015215_007e81d0,2026-11-05 01:52:15,QM-ARC,test_scan,False,2,1200,218,982,745,455,0.620833,0.587156,0.62831,4730.0,3650.0,8380.0,2.24e-06,2.27e-06,2.24e-06,0.79
+exp_ql_qm_arc_2tier_20261105_015216_ad32189c,2026-11-05 01:52:16,QL-QM-ARC,test_scan,False,2,1200,218,982,744,456,0.62,0.587156,0.627291,4730.0,3660.0,8390.0,2.23e-06,2.27e-06,2.23e-06,0.869
+exp_lru_2tier_20261105_015217_8ac5f87a,2026-11-05 01:52:17,LRU,test_scan,False,2,1200,218,982,700,500,0.583333,0.541284,0.592668,5175.0,4000.0,9175.0,2.28e-06,1.74e-06,2.4e-06,0.421

@@ -2,7 +2,7 @@ import csv
 
 from common.packet import Packet
 from common.penalty import get_penalty
-from resources import NDN_PACKETS
+import resources
 from traces.trace_reading.trace import Trace
 
 
@@ -13,8 +13,9 @@ class PriorityTrace(Trace):
         Trace.__init__(self)
         self.data = []
 
-    def gen_data(self, trace_len_limit=-1):
-        for path in NDN_PACKETS:
+    def gen_data(self, trace_len_limit=-1, file_path=None):
+        paths = [file_path] if file_path is not None else list(resources.NDN_PACKETS)
+        for path in paths:
             with open(path, encoding='utf8') as read_obj:
                 csv_reader = csv.reader(read_obj, delimiter=',')
                 self.data = list(csv_reader)

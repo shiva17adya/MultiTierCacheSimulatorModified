@@ -56,7 +56,7 @@ class Index:
         """delete the packet from active index"""
         with self.mutex.request() as req:
             yield req
-            self.active_index.pop(packet_name)
+            self.active_index.pop(packet_name, None)
 
     # Ghost index
     def packet_in_ghost(self, packet_name: str, queue_name: str):
@@ -87,7 +87,7 @@ class Index:
                 self._b1.remove(packet_name)
             if bi == "b2":
                 self._b2.remove(packet_name)
-            self.ghost_index.pop(packet_name)
+            self.ghost_index.pop(packet_name, None)
 
     def pop_packet_from_ghost(self, queue_name: str):
         """pop the packet from the ghost index"""
@@ -97,7 +97,7 @@ class Index:
                 packet_name = self._b1.pop()
             if queue_name == "b2":
                 packet_name = self._b2.pop()
-            self.ghost_index.pop(packet_name)
+            self.ghost_index.pop(packet_name, None)
 
     def ghost_len(self, queue_name: str):
         """return the length of ghost packets in the queue"""

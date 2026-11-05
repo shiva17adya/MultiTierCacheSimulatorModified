@@ -1,0 +1,201 @@
+experiment,workload,variant,seed,global_hit_ratio,high_priority_hit_ratio,penalty_hp,penalty_lp,total_sla_penalty
+ExpD_Ablation_Validation,Scan_Pollution,Complete HA-QM-ARC,1001,0.6241666666666666,0.5791505791505791,5705.0,3420.0,9125.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Hit Gradient,1001,0.6241666666666666,0.5791505791505791,5705.0,3420.0,9125.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Burst Detection,1001,0.6241666666666666,0.5791505791505791,5705.0,3420.0,9125.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Sequential Detection,1001,0.6141666666666666,0.5714285714285714,5800.0,3520.0,9320.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Dynamic QoS,1001,0.6241666666666666,0.5791505791505791,5710.0,3420.0,9130.0
+ExpD_Ablation_Validation,QoS_Surge,Complete HA-QM-ARC,1001,0.44466666666666665,0.4532871972318339,16330.0,5170.0,21500.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Hit Gradient,1001,0.44533333333333336,0.4532871972318339,16330.0,5160.0,21490.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Burst Detection,1001,0.44533333333333336,0.45674740484429066,16235.0,5180.0,21415.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Sequential Detection,1001,0.44466666666666665,0.4532871972318339,16330.0,5170.0,21500.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Dynamic QoS,1001,0.44,0.4515570934256055,16385.0,5230.0,21615.0
+ExpD_Ablation_Validation,Scan_Pollution,Complete HA-QM-ARC,1002,0.6275,0.6313559322033898,4575.0,3600.0,8175.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Hit Gradient,1002,0.6275,0.6313559322033898,4575.0,3600.0,8175.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Burst Detection,1002,0.6275,0.6313559322033898,4575.0,3600.0,8175.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Sequential Detection,1002,0.6241666666666666,0.6271186440677966,4605.0,3630.0,8235.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Dynamic QoS,1002,0.6275,0.6313559322033898,4570.0,3600.0,8170.0
+ExpD_Ablation_Validation,QoS_Surge,Complete HA-QM-ARC,1002,0.422,0.4400749063670412,15365.0,5680.0,21045.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Hit Gradient,1002,0.4206666666666667,0.4363295880149813,15460.0,5680.0,21140.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Burst Detection,1002,0.4266666666666667,0.44756554307116103,15170.0,5650.0,20820.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Sequential Detection,1002,0.422,0.4400749063670412,15365.0,5680.0,21045.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Dynamic QoS,1002,0.432,0.45692883895131087,14965.0,5620.0,20585.0
+ExpD_Ablation_Validation,Scan_Pollution,Complete HA-QM-ARC,1003,0.6258333333333334,0.5753968253968254,5575.0,3420.0,8995.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Hit Gradient,1003,0.6258333333333334,0.5753968253968254,5575.0,3420.0,8995.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Burst Detection,1003,0.6258333333333334,0.5753968253968254,5575.0,3420.0,8995.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Sequential Detection,1003,0.6258333333333334,0.5753968253968254,5575.0,3420.0,8995.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Dynamic QoS,1003,0.6258333333333334,0.5753968253968254,5580.0,3420.0,9000.0
+ExpD_Ablation_Validation,QoS_Surge,Complete HA-QM-ARC,1003,0.4206666666666667,0.4311594202898551,16240.0,5550.0,21790.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Hit Gradient,1003,0.42,0.42934782608695654,16255.0,5550.0,21805.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Burst Detection,1003,0.41933333333333334,0.427536231884058,16305.0,5550.0,21855.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Sequential Detection,1003,0.4206666666666667,0.4311594202898551,16240.0,5550.0,21790.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Dynamic QoS,1003,0.4186666666666667,0.42934782608695654,16205.0,5570.0,21775.0
+ExpD_Ablation_Validation,Scan_Pollution,Complete HA-QM-ARC,1004,0.6233333333333333,0.6746987951807228,4265.0,3700.0,7965.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Hit Gradient,1004,0.6233333333333333,0.6746987951807228,4265.0,3700.0,7965.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Burst Detection,1004,0.6233333333333333,0.6746987951807228,4265.0,3700.0,7965.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Sequential Detection,1004,0.6183333333333333,0.6746987951807228,4270.0,3760.0,8030.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Dynamic QoS,1004,0.6241666666666666,0.6746987951807228,4265.0,3690.0,7955.0
+ExpD_Ablation_Validation,QoS_Surge,Complete HA-QM-ARC,1004,0.4493333333333333,0.477797513321492,15265.0,5320.0,20585.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Hit Gradient,1004,0.44866666666666666,0.477797513321492,15265.0,5330.0,20595.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Burst Detection,1004,0.448,0.47602131438721135,15315.0,5330.0,20645.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Sequential Detection,1004,0.4493333333333333,0.477797513321492,15265.0,5320.0,20585.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Dynamic QoS,1004,0.442,0.47957371225577267,15265.0,5440.0,20705.0
+ExpD_Ablation_Validation,Scan_Pollution,Complete HA-QM-ARC,1005,0.6275,0.6415929203539823,4240.0,3660.0,7900.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Hit Gradient,1005,0.6275,0.6415929203539823,4240.0,3660.0,7900.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Burst Detection,1005,0.6275,0.6415929203539823,4240.0,3660.0,7900.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Sequential Detection,1005,0.6191666666666666,0.6327433628318584,4335.0,3740.0,8075.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Dynamic QoS,1005,0.6275,0.6460176991150443,4195.0,3670.0,7865.0
+ExpD_Ablation_Validation,QoS_Surge,Complete HA-QM-ARC,1005,0.416,0.4489795918367347,15330.0,5780.0,21110.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Hit Gradient,1005,0.4146666666666667,0.44712430426716143,15380.0,5790.0,21170.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Burst Detection,1005,0.416,0.4489795918367347,15335.0,5780.0,21115.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Sequential Detection,1005,0.416,0.4489795918367347,15330.0,5780.0,21110.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Dynamic QoS,1005,0.4166666666666667,0.4489795918367347,15315.0,5770.0,21085.0
+ExpD_Ablation_Validation,Scan_Pollution,Complete HA-QM-ARC,1006,0.6241666666666666,0.6284584980237155,4995.0,3570.0,8565.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Hit Gradient,1006,0.6241666666666666,0.6284584980237155,4995.0,3570.0,8565.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Burst Detection,1006,0.6241666666666666,0.6284584980237155,4995.0,3570.0,8565.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Sequential Detection,1006,0.6175,0.6284584980237155,4995.0,3650.0,8645.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Dynamic QoS,1006,0.6241666666666666,0.6284584980237155,4975.0,3570.0,8545.0
+ExpD_Ablation_Validation,QoS_Surge,Complete HA-QM-ARC,1006,0.44733333333333336,0.45373665480427045,15845.0,5220.0,21065.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Hit Gradient,1006,0.44866666666666666,0.4555160142348754,15795.0,5210.0,21005.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Burst Detection,1006,0.446,0.45195729537366547,15880.0,5230.0,21110.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Sequential Detection,1006,0.44733333333333336,0.45373665480427045,15845.0,5220.0,21065.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Dynamic QoS,1006,0.44866666666666666,0.45195729537366547,15870.0,5190.0,21060.0
+ExpD_Ablation_Validation,Scan_Pollution,Complete HA-QM-ARC,1007,0.6241666666666666,0.6271186440677966,4670.0,3630.0,8300.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Hit Gradient,1007,0.6241666666666666,0.6271186440677966,4670.0,3630.0,8300.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Burst Detection,1007,0.6241666666666666,0.6271186440677966,4670.0,3630.0,8300.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Sequential Detection,1007,0.6191666666666666,0.6228813559322034,4715.0,3680.0,8395.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Dynamic QoS,1007,0.6241666666666666,0.6271186440677966,4665.0,3630.0,8295.0
+ExpD_Ablation_Validation,QoS_Surge,Complete HA-QM-ARC,1007,0.408,0.4142857142857143,16815.0,5600.0,22415.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Hit Gradient,1007,0.4093333333333333,0.4142857142857143,16810.0,5580.0,22390.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Burst Detection,1007,0.408,0.4142857142857143,16820.0,5600.0,22420.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Sequential Detection,1007,0.408,0.4142857142857143,16815.0,5600.0,22415.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Dynamic QoS,1007,0.408,0.4160714285714286,16765.0,5610.0,22375.0
+ExpD_Ablation_Validation,Scan_Pollution,Complete HA-QM-ARC,1008,0.6241666666666666,0.6083333333333333,4950.0,3570.0,8520.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Hit Gradient,1008,0.6241666666666666,0.6083333333333333,4950.0,3570.0,8520.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Burst Detection,1008,0.6241666666666666,0.6083333333333333,4950.0,3570.0,8520.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Sequential Detection,1008,0.6208333333333333,0.6,5035.0,3590.0,8625.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Dynamic QoS,1008,0.6241666666666666,0.6083333333333333,4955.0,3570.0,8525.0
+ExpD_Ablation_Validation,QoS_Surge,Complete HA-QM-ARC,1008,0.43133333333333335,0.453382084095064,15450.0,5540.0,20990.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Hit Gradient,1008,0.43133333333333335,0.453382084095064,15455.0,5540.0,20995.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Burst Detection,1008,0.43133333333333335,0.453382084095064,15455.0,5540.0,20995.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Sequential Detection,1008,0.43133333333333335,0.453382084095064,15450.0,5540.0,20990.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Dynamic QoS,1008,0.43066666666666664,0.44424131627056673,15710.0,5500.0,21210.0
+ExpD_Ablation_Validation,Scan_Pollution,Complete HA-QM-ARC,1009,0.625,0.618421052631579,4590.0,3630.0,8220.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Hit Gradient,1009,0.625,0.618421052631579,4590.0,3630.0,8220.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Burst Detection,1009,0.625,0.618421052631579,4590.0,3630.0,8220.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Sequential Detection,1009,0.6208333333333333,0.6140350877192983,4635.0,3670.0,8305.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Dynamic QoS,1009,0.625,0.618421052631579,4590.0,3630.0,8220.0
+ExpD_Ablation_Validation,QoS_Surge,Complete HA-QM-ARC,1009,0.444,0.4729981378026071,14625.0,5500.0,20125.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Hit Gradient,1009,0.44466666666666665,0.4748603351955307,14575.0,5500.0,20075.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Burst Detection,1009,0.44333333333333336,0.47113594040968343,14660.0,5500.0,20160.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Sequential Detection,1009,0.444,0.4729981378026071,14625.0,5500.0,20125.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Dynamic QoS,1009,0.446,0.4729981378026071,14630.0,5470.0,20100.0
+ExpD_Ablation_Validation,Scan_Pollution,Complete HA-QM-ARC,1010,0.625,0.5843621399176955,5230.0,3490.0,8720.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Hit Gradient,1010,0.625,0.5843621399176955,5230.0,3490.0,8720.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Burst Detection,1010,0.625,0.5843621399176955,5230.0,3490.0,8720.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Sequential Detection,1010,0.6216666666666667,0.5761316872427984,5320.0,3510.0,8830.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Dynamic QoS,1010,0.625,0.5843621399176955,5235.0,3490.0,8725.0
+ExpD_Ablation_Validation,QoS_Surge,Complete HA-QM-ARC,1010,0.42733333333333334,0.43575418994413406,15605.0,5560.0,21165.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Hit Gradient,1010,0.424,0.4301675977653631,15740.0,5580.0,21320.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Burst Detection,1010,0.4266666666666667,0.4338919925512104,15645.0,5560.0,21205.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Sequential Detection,1010,0.42733333333333334,0.43575418994413406,15605.0,5560.0,21165.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Dynamic QoS,1010,0.42733333333333334,0.4338919925512104,15675.0,5550.0,21225.0
+ExpD_Ablation_Validation,Scan_Pollution,Complete HA-QM-ARC,1011,0.6241666666666666,0.6623931623931624,4185.0,3720.0,7905.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Hit Gradient,1011,0.6241666666666666,0.6623931623931624,4185.0,3720.0,7905.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Burst Detection,1011,0.6241666666666666,0.6623931623931624,4185.0,3720.0,7905.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Sequential Detection,1011,0.6191666666666666,0.6538461538461539,4275.0,3760.0,8035.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Dynamic QoS,1011,0.6241666666666666,0.6666666666666666,4150.0,3730.0,7880.0
+ExpD_Ablation_Validation,QoS_Surge,Complete HA-QM-ARC,1011,0.4266666666666667,0.4369287020109689,15730.0,5520.0,21250.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Hit Gradient,1011,0.4266666666666667,0.43875685557586835,15685.0,5530.0,21215.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Burst Detection,1011,0.4266666666666667,0.4369287020109689,15735.0,5520.0,21255.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Sequential Detection,1011,0.4266666666666667,0.4369287020109689,15730.0,5520.0,21250.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Dynamic QoS,1011,0.43066666666666664,0.4424131627056673,15570.0,5490.0,21060.0
+ExpD_Ablation_Validation,Scan_Pollution,Complete HA-QM-ARC,1012,0.6241666666666666,0.6341463414634146,4750.0,3610.0,8360.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Hit Gradient,1012,0.6241666666666666,0.6341463414634146,4750.0,3610.0,8360.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Burst Detection,1012,0.6241666666666666,0.6341463414634146,4750.0,3610.0,8360.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Sequential Detection,1012,0.6191666666666666,0.6300813008130082,4805.0,3660.0,8465.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Dynamic QoS,1012,0.6241666666666666,0.6341463414634146,4745.0,3610.0,8355.0
+ExpD_Ablation_Validation,QoS_Surge,Complete HA-QM-ARC,1012,0.41,0.4198895027624309,16145.0,5700.0,21845.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Hit Gradient,1012,0.4106666666666667,0.42173112338858193,16100.0,5700.0,21800.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Burst Detection,1012,0.4093333333333333,0.4198895027624309,16145.0,5710.0,21855.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Sequential Detection,1012,0.41,0.4198895027624309,16145.0,5700.0,21845.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Dynamic QoS,1012,0.4106666666666667,0.42357274401473294,16065.0,5710.0,21775.0
+ExpD_Ablation_Validation,Scan_Pollution,Complete HA-QM-ARC,1013,0.625,0.631578947368421,4835.0,3590.0,8425.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Hit Gradient,1013,0.625,0.631578947368421,4835.0,3590.0,8425.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Burst Detection,1013,0.625,0.631578947368421,4835.0,3590.0,8425.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Sequential Detection,1013,0.6216666666666667,0.631578947368421,4845.0,3630.0,8475.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Dynamic QoS,1013,0.625,0.631578947368421,4840.0,3590.0,8430.0
+ExpD_Ablation_Validation,QoS_Surge,Complete HA-QM-ARC,1013,0.41133333333333333,0.42585551330798477,15415.0,5810.0,21225.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Hit Gradient,1013,0.41333333333333333,0.4296577946768061,15365.0,5800.0,21165.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Burst Detection,1013,0.41133333333333333,0.42585551330798477,15420.0,5810.0,21230.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Sequential Detection,1013,0.41133333333333333,0.42585551330798477,15415.0,5810.0,21225.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Dynamic QoS,1013,0.4146666666666667,0.43155893536121676,15320.0,5790.0,21110.0
+ExpD_Ablation_Validation,Scan_Pollution,Complete HA-QM-ARC,1014,0.625,0.6392156862745098,4815.0,3580.0,8395.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Hit Gradient,1014,0.625,0.6392156862745098,4815.0,3580.0,8395.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Burst Detection,1014,0.625,0.6392156862745098,4815.0,3580.0,8395.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Sequential Detection,1014,0.6216666666666667,0.6352941176470588,4860.0,3610.0,8470.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Dynamic QoS,1014,0.625,0.6392156862745098,4820.0,3580.0,8400.0
+ExpD_Ablation_Validation,QoS_Surge,Complete HA-QM-ARC,1014,0.44266666666666665,0.4674657534246575,16110.0,5250.0,21360.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Hit Gradient,1014,0.442,0.4657534246575342,16145.0,5250.0,21395.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Burst Detection,1014,0.442,0.4657534246575342,16145.0,5250.0,21395.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Sequential Detection,1014,0.44266666666666665,0.4674657534246575,16110.0,5250.0,21360.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Dynamic QoS,1014,0.44,0.4623287671232877,16210.0,5260.0,21470.0
+ExpD_Ablation_Validation,Scan_Pollution,Complete HA-QM-ARC,1015,0.625,0.6764705882352942,4185.0,3730.0,7915.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Hit Gradient,1015,0.625,0.6764705882352942,4185.0,3730.0,7915.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Burst Detection,1015,0.625,0.6764705882352942,4185.0,3730.0,7915.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Sequential Detection,1015,0.6183333333333333,0.6680672268907563,4270.0,3790.0,8060.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Dynamic QoS,1015,0.625,0.6764705882352942,4195.0,3730.0,7925.0
+ExpD_Ablation_Validation,QoS_Surge,Complete HA-QM-ARC,1015,0.416,0.4338235294117647,15750.0,5680.0,21430.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Hit Gradient,1015,0.416,0.4338235294117647,15745.0,5680.0,21425.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Burst Detection,1015,0.41733333333333333,0.4319852941176471,15790.0,5650.0,21440.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Sequential Detection,1015,0.416,0.4338235294117647,15750.0,5680.0,21430.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Dynamic QoS,1015,0.41733333333333333,0.4338235294117647,15780.0,5660.0,21440.0
+ExpD_Ablation_Validation,Scan_Pollution,Complete HA-QM-ARC,1016,0.6258333333333334,0.6547619047619048,4670.0,3620.0,8290.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Hit Gradient,1016,0.6258333333333334,0.6547619047619048,4670.0,3620.0,8290.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Burst Detection,1016,0.6258333333333334,0.6547619047619048,4670.0,3620.0,8290.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Sequential Detection,1016,0.6216666666666667,0.6547619047619048,4670.0,3670.0,8340.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Dynamic QoS,1016,0.6258333333333334,0.6547619047619048,4660.0,3620.0,8280.0
+ExpD_Ablation_Validation,QoS_Surge,Complete HA-QM-ARC,1016,0.416,0.4205933682373473,17070.0,5440.0,22510.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Hit Gradient,1016,0.4166666666666667,0.4223385689354276,17015.0,5440.0,22455.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Burst Detection,1016,0.4206666666666667,0.4293193717277487,16775.0,5420.0,22195.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Sequential Detection,1016,0.416,0.4205933682373473,17070.0,5440.0,22510.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Dynamic QoS,1016,0.412,0.4118673647469459,17255.0,5450.0,22705.0
+ExpD_Ablation_Validation,Scan_Pollution,Complete HA-QM-ARC,1017,0.625,0.6434782608695652,4350.0,3680.0,8030.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Hit Gradient,1017,0.625,0.6434782608695652,4350.0,3680.0,8030.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Burst Detection,1017,0.625,0.6434782608695652,4350.0,3680.0,8030.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Sequential Detection,1017,0.6233333333333333,0.6391304347826087,4385.0,3690.0,8075.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Dynamic QoS,1017,0.625,0.6434782608695652,4360.0,3680.0,8040.0
+ExpD_Ablation_Validation,QoS_Surge,Complete HA-QM-ARC,1017,0.416,0.4373831775700935,15605.0,5750.0,21355.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Hit Gradient,1017,0.4166666666666667,0.4392523364485981,15555.0,5750.0,21305.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Burst Detection,1017,0.418,0.4373831775700935,15590.0,5720.0,21310.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Sequential Detection,1017,0.416,0.4373831775700935,15605.0,5750.0,21355.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Dynamic QoS,1017,0.41133333333333333,0.4261682242990654,15820.0,5760.0,21580.0
+ExpD_Ablation_Validation,Scan_Pollution,Complete HA-QM-ARC,1018,0.6233333333333333,0.609375,5275.0,3510.0,8785.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Hit Gradient,1018,0.6233333333333333,0.609375,5275.0,3510.0,8785.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Burst Detection,1018,0.6233333333333333,0.609375,5275.0,3510.0,8785.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Sequential Detection,1018,0.62,0.60546875,5320.0,3540.0,8860.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Dynamic QoS,1018,0.6233333333333333,0.609375,5270.0,3510.0,8780.0
+ExpD_Ablation_Validation,QoS_Surge,Complete HA-QM-ARC,1018,0.43066666666666664,0.45263157894736844,16095.0,5420.0,21515.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Hit Gradient,1018,0.43133333333333335,0.45263157894736844,16120.0,5410.0,21530.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Burst Detection,1018,0.43066666666666664,0.45263157894736844,16095.0,5420.0,21515.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Sequential Detection,1018,0.43066666666666664,0.45263157894736844,16095.0,5420.0,21515.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Dynamic QoS,1018,0.42733333333333334,0.4456140350877193,16310.0,5430.0,21740.0
+ExpD_Ablation_Validation,Scan_Pollution,Complete HA-QM-ARC,1019,0.6241666666666666,0.6510638297872341,4380.0,3680.0,8060.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Hit Gradient,1019,0.6241666666666666,0.6510638297872341,4380.0,3680.0,8060.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Burst Detection,1019,0.6241666666666666,0.6510638297872341,4380.0,3680.0,8060.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Sequential Detection,1019,0.6191666666666666,0.6468085106382979,4425.0,3730.0,8155.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Dynamic QoS,1019,0.6241666666666666,0.6510638297872341,4370.0,3680.0,8050.0
+ExpD_Ablation_Validation,QoS_Surge,Complete HA-QM-ARC,1019,0.4246666666666667,0.42066420664206644,16170.0,5490.0,21660.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Hit Gradient,1019,0.424,0.4188191881918819,16200.0,5490.0,21690.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Burst Detection,1019,0.424,0.4188191881918819,16195.0,5490.0,21685.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Sequential Detection,1019,0.4246666666666667,0.42066420664206644,16170.0,5490.0,21660.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Dynamic QoS,1019,0.426,0.4225092250922509,16140.0,5480.0,21620.0
+ExpD_Ablation_Validation,Scan_Pollution,Complete HA-QM-ARC,1020,0.625,0.6470588235294118,4820.0,3600.0,8420.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Hit Gradient,1020,0.625,0.6470588235294118,4820.0,3600.0,8420.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Burst Detection,1020,0.625,0.6470588235294118,4820.0,3600.0,8420.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Sequential Detection,1020,0.6208333333333333,0.6431372549019608,4865.0,3640.0,8505.0
+ExpD_Ablation_Validation,Scan_Pollution,w/o Dynamic QoS,1020,0.625,0.6470588235294118,4820.0,3600.0,8420.0
+ExpD_Ablation_Validation,QoS_Surge,Complete HA-QM-ARC,1020,0.4086666666666667,0.41901408450704225,16930.0,5570.0,22500.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Hit Gradient,1020,0.4126666666666667,0.42077464788732394,16880.0,5520.0,22400.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Burst Detection,1020,0.4073333333333333,0.41901408450704225,16935.0,5590.0,22525.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Sequential Detection,1020,0.4086666666666667,0.41901408450704225,16930.0,5570.0,22500.0
+ExpD_Ablation_Validation,QoS_Surge,w/o Dynamic QoS,1020,0.4186666666666667,0.42077464788732394,16875.0,5430.0,22305.0

@@ -1,74 +1,80 @@
 import random
 import time
+from typing import List, Optional
 
 import numpy as np
 
 
 class QLearningAgent:
-    def __init__(self, num_states: int, num_actions: int, learning_rate: float, discount_factor: float, epsilon: float):
-        self.action_space = range(-num_actions, num_actions)
-        print("action_space = %s" % self.action_space)
-        self.num_states = num_states
-        # Initialize the Q-table with zeros
-        self.q_table = np.zeros([self.num_states, len(self.action_space)])
-        # Set the hyper_parameters
-        self.learning_rate = learning_rate  # learning_rate = 0.1
-        self.discount_factor = discount_factor  # discount_factor = 0.99
-        # Define the epsilon-greedy exploration strategy
-        self.epsilon = epsilon  # epsilon = 0.1
+    def __init__(
+        self,
+        num_states: int,
+        num_actions: int,
+        learning_rate: float,
+        discount_factor: float,
+        epsilon: float,
+        seed: Optional[int] = None,
+    ):
+        """Q-Learning Agent for ARC parameter 'p' adaptation.
+
+        Args:
+            num_states: Maximum number of distinct state values (representing p from 0 to num_states - 1).
+            num_actions: Range parameter defining the discrete action adjustment interval [-num_actions, num_actions - 1].
+            learning_rate: Learning rate alpha (default 0.1).
+            discount_factor: Discount factor gamma (default 0.99).
+            epsilon: Exploration probability epsilon (default 0.1).
+            seed: Optional random seed for reproducible exploration.
+        """
+        if seed is not None:
+            random.seed(seed)
+            np.random.seed(seed)
+
+        self.num_states = max(1, int(num_states))
+        self.num_actions = max(1, int(num_actions))
+
+        self.action_space: List[int] = list(range(-self.num_actions, self.num_actions))
+        self.q_table = np.zeros([self.num_states, len(self.action_space)], dtype=float)
+
+        self.learning_rate = float(learning_rate)
+        self.discount_factor = float(discount_factor)
+        self.epsilon = float(epsilon)
         self.epsilon_decay_value = 0.001
-        self.rewards = []
+        self.rewards: List[int] = []
 
-    def get_next_state(self, current_p: int, current_t1_len: int, current_b1_len: int, current_b2_len: int,
-                       hit: str):
-        # Choose an action using epsilon-greedy exploration
+    def get_next_state(
+        self,
+        current_p: int,
+        current_t1_len: int,
+        current_b1_len: int,
+        current_b2_len: int,
+        hit: str,
+    ) -> int:
+        state_idx = max(0, min(int(current_p), self.num_states - 1))
+
         if random.random() < self.epsilon:
-            action = np.random.choice(self.action_space)
-            # print("action is random %s" % action)
+            action_idx = random.randrange(len(self.action_space))
         else:
-            action = np.argmax(self.q_table[current_p]) - self.num_states
-            # print("action is argmax %s" % action)
+            action_idx = int(np.argmax(self.q_table[state_idx]))
 
-        # if self.epsilon > 0.1:
-        #     self.epsilon -= self.epsilon_decay_value
-        #     print("new epsilon = %s" % self.epsilon)
+        action_value = self.action_space[action_idx]
+        new_state = max(0, min(state_idx + action_value, self.num_states - 1))
 
-        # get next state
-        if current_p + action < 0:
-            new_state = 0
-            # print("new state is %s" % new_state)
-        elif current_p + action >= self.num_states:
-            new_state = self.num_states - 1
-            # print("new state is %s" % new_state)
-        else:
-            new_state = current_p + action
-            # print("new state is %s" % new_state)
-
-        # get the reward
-        if hit.__eq__("t1"):
+        if hit == "t1" or hit == "t2":
             reward = 100
-        elif hit.__eq__("t2"):
-            reward = 100
-        elif hit.__eq__("b1"):
-            if current_b1_len < current_b2_len:
-                reward = -10
-            else:
-                reward = -1
-        elif hit.__eq__("b2"):
-            if current_b1_len > current_b2_len:
-                reward = -10
-            else:
-                reward = -1
-        elif hit.__eq__("Miss"):
+        elif hit == "b1":
+            reward = -10 if current_b1_len < current_b2_len else -1
+        elif hit == "b2":
+            reward = -10 if current_b1_len > current_b2_len else -1
+        elif hit == "Miss":
             reward = -100
         else:
             reward = 0
-        # print("reward is %s" % reward)
 
         self.rewards.append(reward)
-        # update the Q_value
-        self.q_table[current_p, action] += self.learning_rate * (
-                reward + self.discount_factor * np.max(self.q_table[new_state]) - self.q_table[current_p, action])
 
-        # print("new value of self.q_table[%s, %s] is %s" % (current_p, action, self.q_table[current_p, action]))
+        best_future_q = float(np.max(self.q_table[new_state]))
+        td_target = reward + self.discount_factor * best_future_q
+        td_error = td_target - self.q_table[state_idx, action_idx]
+        self.q_table[state_idx, action_idx] += self.learning_rate * td_error
+
         return new_state

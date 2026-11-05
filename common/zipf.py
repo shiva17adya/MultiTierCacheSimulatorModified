@@ -1,45 +1,31 @@
+import bisect
 import random
+from typing import Dict, Tuple, List
+
+# Cache for cumulative probability distributions: (alpha, n) -> List[float]
+_ZIPF_CACHE: Dict[Tuple[float, int], List[float]] = {}
+
+
+def _get_zipf_cdf(alpha: float, n: int) -> List[float]:
+    key = (float(alpha), int(n))
+    if key not in _ZIPF_CACHE:
+        # Precompute CDF once
+        harmonic = sum(1.0 / (i ** alpha) for i in range(1, n + 1))
+        inv_harmonic = 1.0 / harmonic
+        cum_prob = 0.0
+        cdf = []
+        for i in range(1, n + 1):
+            cum_prob += inv_harmonic / (i ** alpha)
+            cdf.append(cum_prob)
+        # Ensure the last element is exactly 1.0
+        cdf[-1] = 1.0
+        _ZIPF_CACHE[key] = cdf
+    return _ZIPF_CACHE[key]
 
 
 def zipf_distribution(alpha: float, n: int) -> int:
-    denom = 0
-    denom_list = []
-    cum_prob = 0
-    cum_prob_list = []
-    for i in range(1, n + 1):
-        denom += 1 / (i ** alpha)
-        denom_list.append(denom)
-    denom = 1 / denom
-    for i in range(1, n + 1):
-        prob = denom / (i ** alpha)
-        cum_prob += prob
-        cum_prob_list.append(cum_prob)
+    """Return a 1-based index drawn from Zipf(alpha, n)."""
+    cdf = _get_zipf_cdf(alpha, n)
     rand = random.random()
-    for i in range(1, n + 1):
-        if rand < cum_prob_list[i - 1]:
-            return i
-    return n
-
-# def zip_f(alpha, store_size):
-#     if not hasattr(zip_f, "zip_f_first_call"):
-#         zip_f.zip_f_first_call = True
-#         zip_f.sum_c = 0.0
-#         zip_f.probInterval = []
-#         for i in range(1, store_size + 1):
-#             current_param = pow(i, -alpha)
-#             zip_f.sum_c += current_param
-#             zip_f.probInterval.append(zip_f.sum_c)
-#         zip_f.sum_c = 1 / zip_f.sum_c
-#         for i in range(1, store_size + 1):
-#             zip_f.probInterval[i - 1] *= zip_f.sum_c
-#
-#     # Pull a uniform random number (0 < z < 1)
-#     z = np.random.random()
-#     while z == 0 or z == 1:
-#         z = np.random.random()
-#
-#     # Map z to the value
-#     for i in range(1, store_size + 1):
-#         if zip_f.probInterval[i - 1] >= z:
-#             return i
-#     return store_size
+    idx = bisect.bisect_left(cdf, rand)
+    return min(idx + 1, n)
